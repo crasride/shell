@@ -1,5 +1,2 @@
 #!/bin/bash
-greet="Hello
-,
-World
-!"
+echo "Hello World"
