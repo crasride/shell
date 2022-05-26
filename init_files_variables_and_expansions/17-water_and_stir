@@ -1,2 +1,1 @@
-#!/bin/bash
-sum = 'expr $WATER +  $STIR' echo $((bestchol#$sum))
+#!/bin/bash:
