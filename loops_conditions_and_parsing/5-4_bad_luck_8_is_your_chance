@@ -6,10 +6,10 @@ while [ "$c" -lt "$t" ]
 do
 	if [ "$c" -eq 3 ]
 then
-		echo "Bad Luck"
+		echo "bad Luck"
 	elif [ "$c" -eq 7 ]
 then
-		echo "Good Luck"
+		echo "good Luck"
 else
 		echo "Best School"
 fi
