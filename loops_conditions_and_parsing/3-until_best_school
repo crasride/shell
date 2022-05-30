@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Until Best School loop. 
 c=0
 max=10
 until [ "$c" -eq "$max" ]
