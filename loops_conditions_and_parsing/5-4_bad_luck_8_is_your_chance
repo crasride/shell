@@ -4,10 +4,10 @@ c=0
 t=10
 while [ "$c" -lt "$t" ]
 do
-	if [ "$c" -eq 4 ]
+	if [ "$c" -eq 3 ]
 then
 		echo "Bad Luck"
-	elif [ "$c" -eq 8 ]
+	elif [ "$c" -eq 7 ]
 then
 		echo "Good Luck"
 else
