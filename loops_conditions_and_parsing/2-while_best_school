@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# While Best School Loop.
+c=0
+t=9
+while [ "$c" -le "$t" ]
+do
+  echo "Best School"
+  (( c++ ))
+done
