@@ -4,6 +4,6 @@ c=0
 max=10
 until [ "$c" -eq "$max" ]
 do
-      echo "Best Scholl"
+      echo "Best School"
       (( c++ ))
 done 
