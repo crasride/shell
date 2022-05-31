@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# write a bash script that display to infinity and beyond for sleep 2
+while true
+do
+echo "To infinity and beyond"
+sleep2
+done
