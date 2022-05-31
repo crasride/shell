@@ -6,7 +6,7 @@ while [ "$HOUR" -lt 13 ]; do
     MINUTES=1
 while [ "$MINUTES" -lt 60 ]; do
     echo "$MINUTES"
-    let MINUTES=MINUTES+1
+ MINUTES='expr MINUTES+1'
 done
-    let HOUR=HOUR+1
+ HOUR='expr HOUR+1'
 done
