@@ -14,6 +14,6 @@ do
    rm /var/run/mycript.pid;
    exit" SIGTERM
    trap "echo 'Y U no love me?!'" SIGINT
-   rm /var/run/myscript.pid;
+   trap " rm /var/run/myscript.pid;
    exit" SIGQUIT
 done
