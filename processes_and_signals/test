@@ -1,1 +1,14 @@
-1617
+#!/usr/bin/env bash
+# Write a Bash script that
+touch script.pid
+pgrep -f "myscript.pid" > script.pid
+while true
+do
+  echo "To infinity and beyond"
+  trap "echo 'I hate the kill command'; 
+  rm -r /var/run/mycript.pid;
+exit" SIGTERM
+  trap "echo 'Y U no love me?!'" SIGINT
+  trap "rm -r /var/run/myscript.pid;
+exit" SIGQUIT
+done
