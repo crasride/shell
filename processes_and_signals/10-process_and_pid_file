@@ -6,9 +6,9 @@ while true
 do
   echo "To infinity and beyond"
   trap "echo 'I hate the kill command'; 
-  sudo rm /var/run/mycript.pid;
+  rm -r /var/run/mycript.pid;
 exit" SIGTERM
   trap "echo 'Y U no love me?!'" SIGINT
-  trap "rm /var/run/myscript.pid;
+  trap "rm -r /var/run/myscript.pid;
 exit" SIGQUIT
 done
