@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Write a Bash script that
-touch /var/run/holbertonscript.pid
-pgrep -f "100-process_and_pid_file" > /var/run/holbertonscript.pid
-trap "echo 'I hate the kill command'; rm -f /var/run/holbertonscript.pid; exit" SIGTERM
+touch /var/run/myscript.pid
+pgrep -f "10-process_and_pid_file" > /var/run/myscript.pid
+trap "echo 'I hate the kill command'; rm /var/run/myscript.pid; exit" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "rm -f /var/run/holbertonscript.pid; exit" SIGQUIT
+trap "rm -f /var/run/myscript.pid; exit" SIGQUIT
 while true
 do
 echo "To infinity and beyond"
