@@ -11,7 +11,7 @@ killLoop_n_rmFile()
     {
         #kill "$(cat "$tmpfile")"
         sudo pkill -f "./manage_my_process"
-        rm -f "$tmpfile"
+        sudo rm -f "$tmpfile"
     }
 case "$caja" in
     start) echo "manage_my_process started";; 
