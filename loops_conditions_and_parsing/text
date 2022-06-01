@@ -1,0 +1,12 @@
+UR=0
+while [ "$HOUR" -lt 13 ]; do
+    echo "Hour: $HOUR"
+MINUTES=1
+    while [ "$MINUTES" -lt 60 ]; do
+	echo "$MINUTES"
+	MINUTES= 'expr MINUTES+1'
+    done
+      HOUR='expr HOUR+1'
+done
+
+
