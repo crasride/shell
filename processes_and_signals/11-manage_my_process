@@ -10,9 +10,9 @@ start_et_createFile()
 	}
 killLoop_et_rmFile()
         {
-kill "$(cat "$tmpfile")"
-           sudo pkill -f "./my_process"
-           rm -f "$tmpfile"
+           sudo kill -f "$(cat "$tmpfile")"
+#           sudo pkill -f "./manage_my_process"
+           sudo rm -f "$tmpfile"
         }
   case "$caja" in
 	        
