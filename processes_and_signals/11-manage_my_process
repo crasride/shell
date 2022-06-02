@@ -11,7 +11,7 @@ start_et_createFile()
 killLoop_et_rmFile()
         {
 kill "$(cat "$tmpfile")"
-           sudo pkill -f "./manage_my_process"
+           sudo pkill -f "./my_process"
            rm -f "$tmpfile"
         }
   case "$caja" in
@@ -20,7 +20,7 @@ kill "$(cat "$tmpfile")"
 		   start_et_createFile
 		   ;;
 	  
-	   stop) echo "my_process stopped"
+	   stop) echo "manage_my_process stopped"
 		   killLoop_et_rmFile
 		   ;;
 		        
