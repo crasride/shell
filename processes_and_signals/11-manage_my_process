@@ -6,7 +6,7 @@ tmpfile="/var/run/my_process.pid"
 startLoop_n_createFile()
         {
 	    ./manage_my_process &
-	        echo "$1" > "$tmpfile"
+	        echo "$!" > "$tmpfile"
 	}
 killLoop_n_rmFile()
         {
@@ -14,7 +14,7 @@ kill "$(cat "$tmpfile")"
            sudo pkill -f "./manage_my_process"
            rm -f "$tmpfile"
         }
-  case "$caja" in
+  case "$1" in
 	        
 	   start) echo "manage_my_process started";;
 	  
