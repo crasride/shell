@@ -6,7 +6,7 @@ tmpfile="/var/run/my_process.pid"
 startLoop_n_createFile()
         {
 	    ./manage_my_process &
-	        echo "$!" > "$tmpfile"
+	        echo "$1" > "$tmpfile"
 	}
 killLoop_n_rmFile()
         {
