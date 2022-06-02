@@ -4,16 +4,15 @@ caja=$1
 tmpfile="/var/run/my_process.pid"
 start_et_createFile()
         {
-#        sudo touch /var/run/my_process.pid
-#        sudo chmod u+x manage_my_process
    	./manage_my_process & 
         sudo touch /var/run/my_process.pid
-#        echo "$!" > "$tmpfile"       
+        echo "$!" > "$tmpfile"       
 	}
 kill_et_rmFile()
         {
         sudo pkill -f "./manage_my_process"
         sudo rm -f "/var/run/my_process.pid"
+
         }
 stop_rm_start_createFile()
            {
@@ -21,8 +20,7 @@ stop_rm_start_createFile()
            sudo rm -f "/var/run/my_process.pid"
            ./manage_my_process &
 	   sudo touch /var/run/my_process.pid
-#	   echo "$!" > "$tmpfile" 
-	   #> /var/run/my_process.pid
+	   echo "$!" > "$tmpfile" 
           }
 
 
