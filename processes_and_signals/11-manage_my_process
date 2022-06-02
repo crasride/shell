@@ -3,12 +3,12 @@
 caja=$1
 tmpfile="/var/run/my_process.pid"
 
-startLoop_n_createFile()
+start_et_createFile()
         {
 	    ./manage_my_process &
 	        echo "$!" > "$tmpfile"
 	}
-killLoop_n_rmFile()
+killLoop_et_rmFile()
         {
 kill "$(cat "$tmpfile")"
            sudo pkill -f "./manage_my_process"
@@ -17,11 +17,11 @@ kill "$(cat "$tmpfile")"
   case "$caja" in
 	        
 	   start) echo "manage_my_process started"
-		   ./manage_my_process
+		   start_et_createFile
 		   ;;
 	  
-	   stop) echo "manage_my_process stopped"
-		   sudo pkill -f "./manage_my_process"
+	   stop) echo "my_process stopped"
+		   killLoop_et_rmFile
 		   ;;
 		        
 	   restart) echo "manage_my_process restarted";;
