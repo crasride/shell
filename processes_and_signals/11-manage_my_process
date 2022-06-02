@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #rograms that are detached from the terminal and running in the background are called daemons or processes, need to be managed. The general minimum set of instructions is: start, restar
 caja=$1
-#tmpfile="/var/run/my_process.pid"
+tmpfile="/var/run/my_process.pid"
 start_et_createFile()
         {
 #        sudo touch /var/run/my_process.pid
 #        sudo chmod u+x manage_my_process
    	./manage_my_process & 
         sudo touch /var/run/my_process.pid
-        echo "$!" #> /var/run/my_process.pid       
+        echo "$!" > "$tmpfile"       
 	}
 kill_et_rmFile()
         {
@@ -21,7 +21,8 @@ stop_rm_start_createFile()
            sudo rm -f "/var/run/my_process.pid"
            ./manage_my_process &
 	   sudo touch /var/run/my_process.pid
-	   echo "$!" #> /var/run/my_process.pid
+	   echo "$!" > "$tmpfile" 
+	   #> /var/run/my_process.pid
           }
 
 
