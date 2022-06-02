@@ -20,7 +20,9 @@ kill "$(cat "$tmpfile")"
 		   ./manage_my_process
 		   ;;
 	  
-	   stop) echo "manage_my_process stopped";;
+	   stop) echo "manage_my_process stopped"
+		   sudo pkill -f "./manage_my_process"
+		   ;;
 		        
 	   restart) echo "manage_my_process restarted";;
 			    
