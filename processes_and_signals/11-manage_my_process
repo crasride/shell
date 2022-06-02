@@ -21,7 +21,7 @@ stop_rm_start_createFile()
            sudo rm -f "/var/run/my_process.pid"
            ./manage_my_process &
 	   sudo touch /var/run/my_process.pid
-	   echo "$!" > "$tmpfile" 
+#	   echo "$!" > "$tmpfile" 
 	   #> /var/run/my_process.pid
           }
 
