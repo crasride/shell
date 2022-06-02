@@ -8,7 +8,7 @@ start_et_createFile()
 #        sudo chmod u+x manage_my_process
    	./manage_my_process & 
         sudo touch /var/run/my_process.pid
-        echo "$!" > "$tmpfile"       
+#        echo "$!" > "$tmpfile"       
 	}
 kill_et_rmFile()
         {
