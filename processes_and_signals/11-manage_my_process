@@ -4,7 +4,6 @@ caja=$1
 tmpfile="/var/run/my_process.pid"
 start_et_createFile()
         {
-#	chown vagrant /var/run/my_process.pid		
         sudo touch /var/run/my_process.pid
         sudo chmod u+x manage_my_process
  	./manage_my_process & 
