@@ -8,7 +8,7 @@ start_et_createFile()
 	    ./manage_my_process &
 	        echo "$!" > "$tmpfile"
 	}
-killLoop_et_rmFile()
+kill_et_rmFile()
         {
            sudo kill -f "$(cat "$tmpfile")"
 #           sudo pkill -f "./manage_my_process"
@@ -21,7 +21,7 @@ killLoop_et_rmFile()
 		   ;;
 	  
 	   stop) echo "manage_my_process stopped"
-		   killLoop_et_rmFile
+		   kill_et_rmFile
 		   ;;
 		        
 	   restart) echo "manage_my_process restarted";;
