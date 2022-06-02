@@ -8,13 +8,23 @@ start_et_createFile()
 #        sudo chmod u+x manage_my_process
    	./manage_my_process & 
         sudo touch /var/run/my_process.pid
-#        sudo echo "$!" > /var/run/my_process.pid       
+        echo "$!" > /var/run/my_process.pid       
 	}
 kill_et_rmFile()
         {
         sudo pkill -f "./manage_my_process"
         sudo rm -f "/var/run/my_process.pid"
         }
+stop_rm_start_createFile()
+           {
+           sudo pkill -f "./manage_my_process"
+           sudo rm -f "/var/run/my_process.pid"
+           ./manage_my_process &
+	   sudo touch /var/run/my_process.pid
+	   sudo echo "$!" #> /var/run/my_process.pid
+          }
+
+
   case "$caja" in
 	        
 	   start) echo "manage_my_process started"
@@ -25,7 +35,9 @@ kill_et_rmFile()
 		   kill_et_rmFile
 		   ;;
 		        
-	   restart) echo "manage_my_process restarted";;
+	   restart) echo "manage_my_process restarted"
+		   stop_rm_start_createFile
+		   ;;
 			    
    *) echo "Usage: manage_my_process {start|stop|restart}"
 				   	;;
