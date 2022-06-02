@@ -2,16 +2,17 @@
 #rograms that are detached from the terminal and running in the background are called daemons or processes, need to be managed. The general minimum set of instructions is: start, restar
 caja=$1
 tmpfile="/var/run/my_process.pid"
-
 start_et_createFile()
         {
-	    ./manage_my_process &
-	        echo "$!" > "$tmpfile"
+#	chown vagrant /var/run/my_process.pid		
+        sudo chmod u+x manage_my_process
+ 	./manage_my_process & 
+        echo $! > $tmpfile
 	}
 kill_et_rmFile()
         {
            sudo kill -f "$(cat "$tmpfile")"
-#           sudo pkill -f "./manage_my_process"
+#          sudo pkill -f "./manage_my_process"
            sudo rm -f "$tmpfile"
         }
   case "$caja" in
