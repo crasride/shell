@@ -4,16 +4,16 @@ caja=$1
 tmpfile="/var/run/my_process.pid"
 start_et_createFile()
         {
+#        sudo touch /var/run/my_process.pid
+#        sudo chmod u+x manage_my_process
+   	./manage_my_process & 
         sudo touch /var/run/my_process.pid
-        sudo chmod u+x manage_my_process
- 	./manage_my_process & 
-#        echo "$$"  #'/var/run/my_process.pid'
+#        sudo echo "$!" > /var/run/my_process.pid       
 	}
 kill_et_rmFile()
         {
-           sudo kill -f "$(cat "$tmpfile")"
-#          sudo pkill -f "./manage_my_process"
-           sudo rm -f "$tmpfile"
+        sudo pkill -f "./manage_my_process"
+        sudo rm -f "/var/run/my_process.pid"
         }
   case "$caja" in
 	        
