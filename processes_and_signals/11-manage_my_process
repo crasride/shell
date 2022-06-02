@@ -14,12 +14,15 @@ killLoop_n_rmFile()
         sudo rm -f "$tmpfile"
     }
 case "$caja" in
-    start) echo "manage_my_process start";; 
-#	    startLoop_n_createFile
-    stop) echo "manage_my_process stop";; 
-#		   killLoop_n_rmFile
-    restart) echo "manage_my_process restart";;
-#	           KillLoop_n_rmFile
-#		   startLoop_n_createFile
+    start) echo "manage_my_process start"
+    startLoop_n_createFile
+    ;;
+    stop) echo "manage_my_process stop" 
+		   killLoop_n_rmFile
+		   ;;
+    restart) echo "manage_my_process restart"
+	           KillLoop_n_rmFile
+		   startLoop_n_createFile
+		   ;;
     *) echo "Usage: manage_my_process {start|stop|restart}";;
 esac
