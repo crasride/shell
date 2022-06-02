@@ -2,27 +2,26 @@
 #rograms that are detached from the terminal and running in the background are called daemons or processes, need to be managed. The general minimum set of instructions is: start, restar
 caja=$1
 tmpfile="/var/run/my_process.pid"
-     startLoop_n_createFile()
-    {
-        ./manage_my_process &
-        echo "$!" > "$tmpfile"
-    }
+
+startLoop_n_createFile()
+{
+	    ./manage_my_process &
+	        echo "$!" > "$tmpfile"
+	}
 killLoop_n_rmFile()
-    {
-        #kill "$(cat "$tmpfile")"
-        sudo pkill -f "./manage_my_process"
-        sudo rm -f "$tmpfile"
-    }
-case "$caja" in
-    start) echo "manage_my_process start"
-#    startLoop_n_createFile
-                   ;;
-    stop) echo "manage_my_process stop" 
-#		   killLoop_n_rmFile
-		   ;;
-    restart) echo "manage_my_process restart"
-#	           KillLoop_n_rmFile
-#		   startLoop_n_createFile
-		   ;;
-    *) echo "Usage: manage_my_process {start|stop|restart}";;
-esac
+{
+	    #kill "$(cat "$tmpfile")"
+	        sudo pkill -f "./manage_my_process"
+		    rm -f "$tmpfile"
+	    }
+    case "$caja" in
+	        
+	        start) echo "manage_my_process started";;
+		    
+		    stop) echo "manage_my_process stopped";;
+		        
+		        restart) echo "manage_my_process restarted";;
+			    
+			   *) echo "Usage: manage_my_process {start|stop|restart}"
+				   	;;
+			esac
