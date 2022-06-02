@@ -7,7 +7,7 @@ start_et_createFile()
 #	chown vagrant /var/run/my_process.pid		
         sudo chmod u+x manage_my_process
  	./manage_my_process & 
-        echo $! > $tmpfile
+        echo $! /var/run/my_process.pid
 	}
 kill_et_rmFile()
         {
