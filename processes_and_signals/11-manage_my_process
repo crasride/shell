@@ -14,9 +14,11 @@ kill "$(cat "$tmpfile")"
            sudo pkill -f "./manage_my_process"
            rm -f "$tmpfile"
         }
-  case "$1" in
+  case "$caja" in
 	        
-	   start) echo "manage_my_process started";;
+	   start) echo "manage_my_process started"
+		   ./manage_my_process
+		   ;;
 	  
 	   stop) echo "manage_my_process stopped";;
 		        
